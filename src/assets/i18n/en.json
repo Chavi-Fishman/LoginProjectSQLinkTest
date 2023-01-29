@@ -1,0 +1,12 @@
+{
+    "LOGIN": {
+        "LOGIN": "Login",
+        "USEREMAIL": "User Mail",
+        "PASSWORD": "Password"
+    },
+    "ERRORS": {
+        "REQUIRED": "Required field",
+        "EMAIL_VALIDATION": "Email is not valid",
+        "PASSWORD_VALIDATION": "Password is not valid"
+    }
+}

@@ -1,0 +1,47 @@
+<h1>{{title|uppercase}}</h1>
+<form class="form" #loginForm="ngForm" novalidate>
+  <div>
+    <div><label class="title" for="email">{{'LOGIN.USEREMAIL' | translate}}</label></div>
+    <input type="email" pInputText autocomplete="off" name="email" #email="ngModel" [(ngModel)]="loginModel.email"
+      required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+    <div *ngIf="!email.valid && email.touched" class="error-required">
+      <div *ngIf="email.errors?.required">
+        {{'ERRORS.REQUIRED' | translate}}
+      </div>
+      <div *ngIf="email.errors?.pattern">
+        {{'ERRORS.EMAIL_VALIDATION' | translate}}
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div><label class="title">{{'LOGIN.PASSWORD' | translate}}</label></div>
+    <p-password class="" type="password" autocomplete="off" name="password" [(ngModel)]="loginModel.password"
+      #password="ngModel" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$">
+      <ng-template pTemplate="footer">
+        <p-divider></p-divider>
+        <p class="mt-2">Suggestions</p>
+        <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+          <li>At least one lowercase</li>
+          <li>At least one uppercase</li>
+          <li>At least one numeric</li>
+          <li>Minimum 8 characters</li>
+        </ul>
+      </ng-template>
+    </p-password>
+    <div *ngIf="!password.valid && email.touched" class="error-required">
+      <div *ngIf="password.errors?.['required']">
+        {{'ERRORS.REQUIRED' | translate}}
+      </div>
+      <div *ngIf="password.errors?.['pattern']">
+        {{'ERRORS.PASSWORD_VALIDATION' | translate}}
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p-progressSpinner [hidden]="!loginForm.form.valid || !indicator"></p-progressSpinner>
+    <button [disabled]="!loginForm.form.valid || indicator" pButton type="submit" (click)="login()">{{'LOGIN.LOGIN' |
+      translate}}</button>
+  </div>
+</form>

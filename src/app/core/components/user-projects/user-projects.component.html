@@ -1,0 +1,53 @@
+<div class="calcField">The Avg Score: {{avg}} </div>
+<div class="calcField">Projects made in dadeline: {{proMadeDadelineAmount|percent}} </div>
+<p-table #dt [value]="userProjects"
+    [globalFilterFields]="['id','name','score','durationInDays','bugsCount','madeDadeline']">
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input [(ngModel)]="searchKey" pInputText type="text" (input)="onSearchChanged()"
+                    placeholder="Search keyword" />
+            </span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th [pSortableColumn]="'id'">
+                Id
+                <p-sortIcon [field]="'id'"></p-sortIcon>
+            </th>
+            <th [pSortableColumn]="'name'">
+                Name
+                <p-sortIcon [field]="'name'"></p-sortIcon>
+            </th>
+            <th [pSortableColumn]="'score'">
+                Score
+                <p-sortIcon [field]="'score'"></p-sortIcon>
+            </th>
+            <th [pSortableColumn]="'durationInDays'">
+                DurationInDays
+                <p-sortIcon [field]="'durationInDays'"></p-sortIcon>
+            </th>
+            <th [pSortableColumn]="'bugsCount'">
+                BugsCount
+                <p-sortIcon [field]="'bugsCount'"></p-sortIcon>
+            </th>
+            <th [pSortableColumn]="'madeDadeline'">
+                MadeDadeline
+                <p-sortIcon [field]="'madeDadeline'"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-userProjects>
+        <tr>
+            <td>{{userProjects.id}}</td>
+            <td>{{userProjects.name}}</td>
+            <td [ngClass]="{'lowScore':userProjects.score<70,'highScore':userProjects.score>90}">{{userProjects.score}}
+            </td>
+            <td>{{userProjects.durationInDays}}</td>
+            <td>{{userProjects.bugsCount}}</td>
+            <td>{{userProjects.madeDadeline}}</td>
+        </tr>
+    </ng-template>
+</p-table>

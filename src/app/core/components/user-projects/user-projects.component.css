@@ -1,0 +1,12 @@
+.lowScore {
+    background: rgb(228, 10, 10);
+}
+
+.highScore {
+    background: rgb(38, 234, 7);
+}
+
+.calcField {
+    text-align: center;
+    font-family: cursive;
+}

@@ -1,0 +1,21 @@
+.form{
+    margin: 7% 43%;
+    font-family: cursive;
+}
+h1{
+    margin:42px 46%;
+    font-size: xx-large;
+    font-family: cursive;
+}
+.error-required{
+    font: caption;
+    margin: 2% 0 8%;
+}
+.p-button{
+    margin: 10% 27%;
+}
+::ng-deep .p-progress-spinner {
+    position: absolute !important;
+    top: 70% !important;
+    right: 50% !important;
+}

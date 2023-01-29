@@ -1,0 +1,12 @@
+<h1>{{title|titlecase}}</h1>
+<div *ngIf="personalDetails$ | async as personalDetails" class="userDetails">
+    <div>Name: {{personalDetails.name}}</div>
+    <div>Team: {{personalDetails.Team}}</div>
+    <div>JoinedAt: {{personalDetails.joinedAt | date}}</div>
+    <div>
+        <div>avatar: </div>
+        <img src={{personalDetails.avatar}} style="width: 50px;">
+    </div>
+</div>
+<br />
+<user-projects></user-projects>
