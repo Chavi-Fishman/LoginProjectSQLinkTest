@@ -35,12 +35,12 @@ export class UserProjectsComponent implements OnInit {
       this.userProjects = this.tempPro;
       this.table.filterGlobal(this.searchKey, 'contains');
       this.userProjects = this.userProjects.filter(pro =>
-        pro.id == this.searchKey ||
-        pro.name == this.searchKey ||
-        pro.score.toString() == this.searchKey ||
-        pro.bugsCount.toString() == this.searchKey ||
-        pro.durationInDays.toString() == this.searchKey ||
-        pro.madeDadeline.toString() == this.searchKey
+        pro.id.includes(this.searchKey) ||
+        pro.name.includes(this.searchKey) ||
+        pro.score.toString().includes(this.searchKey) ||
+        pro.bugsCount.toString().includes(this.searchKey) ||
+        pro.durationInDays.toString().includes(this.searchKey) ||
+        pro.madeDadeline.toString().includes(this.searchKey)
       )
     }
     else {
