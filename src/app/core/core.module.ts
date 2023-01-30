@@ -6,6 +6,7 @@ import { UserProjectsComponent } from './components/user-projects/user-projects.
 import {TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { CoreService } from './services/core.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -18,7 +19,8 @@ import { CoreService } from './services/core.service';
     CommonModule,
     CoreRoutingModule,
     TableModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
   providers:[CoreService]
 })

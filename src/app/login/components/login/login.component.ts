@@ -9,7 +9,6 @@ import { AuthServiceService } from 'app/services/auth-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  title: string = "Login";
   loginModel: { email: string, password: string };
   lastAuthEmail = localStorage.getItem(LAST_CONNECTED_EMAIL);
   indicator = false;

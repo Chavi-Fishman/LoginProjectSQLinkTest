@@ -8,5 +8,8 @@
         "REQUIRED": "Required field",
         "EMAIL_VALIDATION": "Email is not valid",
         "PASSWORD_VALIDATION": "Password is not valid"
-    }
+    },
+    "USER_INFO":{
+        "USER_INFO":"user informaion"
+    } 
 }

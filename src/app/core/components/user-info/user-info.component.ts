@@ -13,7 +13,6 @@ import { Observable } from 'rxjs';
 })
 export class UserInfoComponent implements OnInit {
   personalDetails$: Observable<PersonalDetails>;
-  title = "user informaion";
 
   constructor(private store: Store<AuthUserState>) { }
 
